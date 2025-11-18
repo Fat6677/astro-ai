@@ -13,7 +13,13 @@ export default function HeaderWithLogo() {
       </header>
 
       {/* TEKS SELAMAT DATANG */}
-        <h2 className="text-xl font-semibold mb-6 text-gray-700 text-center justify-center items-center mt-20 ">
+        <h2 className="text-xl font-semibold mb-6 text-gray-700 text-center justify-center items-center mt-20 "
+        style={{
+            fontFamily: "'Cinzel Decorative', cursive",
+            fontWeight: 700,
+            letterSpacing: "2px"
+          }}
+        >
           Selamat datang di Astri AI
         </h2>
 
