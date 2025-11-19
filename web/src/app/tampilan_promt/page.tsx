@@ -18,6 +18,15 @@ export default function TampilanPrompt() {
              
              {/* Plus icon */ }
             <span className="text-gray-300 text-xl mr-3">＋</span>
+
+             {/* TEXT INPUT */}
+        <input
+          type="text"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Ask anything..."
+          className="flex-1 bg-transparent text-white outline-none placeholder-gray-400 text-lg"
+        />
         </div>
 
            
