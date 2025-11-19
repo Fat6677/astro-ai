@@ -28,11 +28,11 @@ export default function HeaderWithLogo() {
           letterSpacing: "2px"
         }}
       >
-        Selamat datang di Astri AI
+        Selamat datang di Astro AI
       </h2>
 
       {/* LOGO + NAMA DI TENGAH */}
-      <div className="flex flex-col justify-center items-center mt-10">
+      <div className="flex flex-col  ml-10">
         {/* LOGO */}
         <div className="w-32 h-32 bg-blue-500 rounded-full flex items-center justify-center text-white text-3xl font-bold shadow-lg">
           LOGO
@@ -42,8 +42,16 @@ export default function HeaderWithLogo() {
         <h2 className="text-2xl font-semibold mt-4 text-gray-800">
           Astro-Ai
         </h2>
-      </div>
+        {/* DESKRIPSI */}
+        <p className="mt-6 max-w-xl text-gray-600 px-6 leading-relaxed text-justify">
+          Astro AI adalah sebuah kecerdasan buatan yang dirancang sebagai pendamping cerdas dalam kehidupan sehari-hari. Dengan kemampuan memahami konteks percakapan, menganalisis kebutuhan pengguna, serta memberikan rekomendasi yang tepat, Astro AI hadir sebagai “AI Permal Kehidupan” — sebuah asisten digital yang selalu siap membantu berbagai aktivitas harian.
 
+          Astro AI mampu menjawab pertanyaan, memberikan solusi praktis, membantu pengambilan keputusan, serta mendampingi pengguna dalam belajar, bekerja, maupun berkreasi. Dengan antarmuka yang ramah dan respons cepat, Astro AI memberikan pengalaman interaksi yang intuitif dan personal, seperti berbicara dengan seorang asisten nyata.
+
+          Dibangun dengan teknologi modern dan kecerdasan adaptif, Astro AI terus berkembang mengikuti kebiasaan dan kebutuhan penggunanya. Mulai dari mencari informasi, merencanakan kegiatan, membuat konten, hingga membantu pekerjaan teknis, Astro AI menjadi partner cerdas yang setia di setiap momen penting dalam kehidupan.
+        </p>
+
+      </div>
     </div>
   );
 }
