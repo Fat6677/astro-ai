@@ -48,23 +48,23 @@ export default function HeaderWithLogo() {
 
 
       </div>
-       <footer className="bg-blue-600 text-white py-6 mt-10">
-      <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-        
-        {/* NAMA APLIKASI */}
-        <h2 className="text-xl font-bold tracking-wide">
-          Astro AI
-        </h2>
+      <footer className="bg-blue-600 text-white py-6 mt-10">
+        <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
 
-        {/* COPYRIGHT */}
-        <p className="text-sm mt-4 md:mt-0 opacity-80">
-          © {new Date().getFullYear()} Astro AI. All Rights Reserved.
-        </p>
-      </div>
-    </footer>
+          {/* NAMA APLIKASI */}
+          <h2 className="text-xl font-bold tracking-wide">
+            Astro AI
+          </h2>
+
+          {/* COPYRIGHT */}
+          <p className="text-sm mt-4 md:mt-0 opacity-80">
+            © {new Date().getFullYear()} Astro AI. All Rights Reserved.
+          </p>
+        </div>
+      </footer>
 
     </div>
 
-    
+
   );
 }
