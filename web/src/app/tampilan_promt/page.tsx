@@ -27,6 +27,11 @@ export default function TampilanPrompt() {
           placeholder="Ask anything..."
           className="flex-1 bg-transparent text-white outline-none placeholder-gray-400 text-lg"
         />
+
+        {/* Mic icon */}
+        {text.length === 0 && (
+          <span className="text-gray-300 text-xl mr-3 cursor-pointer">🎤</span>
+        )}
         </div>
 
            
