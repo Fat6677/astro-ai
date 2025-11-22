@@ -1,10 +1,20 @@
 import bcrypt from 'bcrypt'
 
 export const hashPassword = async (password: string): Promise<string> => {
-  const saltRounds = 12
-  return await bcrypt.hash(password, saltRounds)
+  try {
+    const saltRounds = 12
+    return await bcrypt.hash(password, saltRounds)
+  } catch (error) {
+    console.error('Password hashing error:', error)
+    throw new Error('Failed to hash password')
+  }
 }
 
 export const verifyPassword = async (password: string, hashedPassword: string): Promise<boolean> => {
-  return await bcrypt.compare(password, hashedPassword)
+  try {
+    return await bcrypt.compare(password, hashedPassword)
+  } catch (error) {
+    console.error('Password verification error:', error)
+    throw new Error('Failed to verify password')
+  }
 }
