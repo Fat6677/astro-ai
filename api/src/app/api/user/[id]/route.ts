@@ -1,64 +1,43 @@
-import { prisma } from "@/app/api/lib/prisma";
-import { NextRequest } from "next/server";
+import { PrismaClient } from "@prisma/client";
 
-// GET user by ID
+const prisma = new PrismaClient();
+
 export async function GET(
-  req: NextRequest,
+  request: Request,
   { params }: { params: { id: string } }
 ) {
-  try {
-    const user = await prisma.user.findUnique({
-      where: { id: params.id }
-    });
+  const user = await prisma.user.findUnique({
+    where: { id: params.id },
+  });
 
-    if (!user) {
-      return Response.json({ error: "User tidak ditemukan" }, { status: 404 });
-    }
-
-    return Response.json(user);
-  } catch (error) {
-    return Response.json({ error: "Server error" }, { status: 500 });
+  if (!user) {
+    return new Response("User tidak ditemukan", { status: 404 });
   }
+
+  return Response.json(user);
 }
 
-// UPDATE
 export async function PUT(
-  req: NextRequest,
+  request: Request,
   { params }: { params: { id: string } }
 ) {
-  try {
-    const body = await req.json();
+  const body = await request.json();
 
-    const updated = await prisma.user.update({
-      where: { id: params.id },
-      data: {
-        username: body.username,
-        email: body.email,
-        birthdate: body.birthdate ? new Date(body.birthdate) : undefined,
-      }
-    });
+  const updated = await prisma.user.update({
+    where: { id: params.id },
+    data: body,
+  });
 
-    return Response.json({
-      message: "User updated",
-      user: updated
-    });
-  } catch (error) {
-    return Response.json({ error: "Update gagal" }, { status: 500 });
-  }
+  return Response.json(updated);
 }
 
-// DELETE
 export async function DELETE(
-  req: NextRequest,
+  request: Request,
   { params }: { params: { id: string } }
 ) {
-  try {
-    await prisma.user.delete({
-      where: { id: params.id }
-    });
+  await prisma.user.delete({
+    where: { id: params.id },
+  });
 
-    return Response.json({ message: "User dihapus" });
-  } catch (error) {
-    return Response.json({ error: "Gagal menghapus user" }, { status: 500 });
-  }
+  return new Response("User dihapus", { status: 200 });
 }
