@@ -20,19 +20,22 @@ export default function HomeScreen() {
       </View>
 
       {/* ================= CONTENT ================= */}
-      <Text style={styles.title}>Selamat Datang</Text>
+      <Text style={styles.title}>Selamat Datang Di Astro AI</Text>
 
       <View style={styles.row}>
         {/* LOGO BESAR */}
         <Image
-          source={{ uri: "https://reactnative.dev/img/tiny_logo.png" }}
+         source={require("../../assets/images/mylogo.png")}
           style={styles.mainLogo}
         />
 
         {/* PENJELASAN */}
         <Text style={styles.description}>
-          Ini adalah aplikasi mobile sederhana yang akan membantu Anda dalam
-          melakukan berbagai aktivitas sehari-hari dengan mudah dan cepat.
+          Astro AI adalah sebuah kecerdasan buatan yang dirancang sebagai pendamping cerdas dalam kehidupan sehari-hari. Dengan kemampuan memahami konteks percakapan, menganalisis kebutuhan pengguna, serta memberikan rekomendasi yang tepat, Astro AI hadir sebagai “AI Permal Kehidupan” — sebuah asisten digital yang selalu siap membantu berbagai aktivitas harian.
+
+          Astro AI mampu menjawab pertanyaan, memberikan solusi praktis, membantu pengambilan keputusan, serta mendampingi pengguna dalam belajar, bekerja, maupun berkreasi. Dengan antarmuka yang ramah dan respons cepat, Astro AI memberikan pengalaman interaksi yang intuitif dan personal, seperti berbicara dengan seorang asisten nyata.
+
+          Dibangun dengan teknologi modern dan kecerdasan adaptif, Astro AI terus berkembang mengikuti kebiasaan dan kebutuhan penggunanya. Mulai dari mencari informasi, merencanakan kegiatan, membuat konten, hingga membantu pekerjaan teknis, Astro AI menjadi partner cerdas yang setia di setiap momen penting dalam kehidupan.
         </Text>
       </View>
 
